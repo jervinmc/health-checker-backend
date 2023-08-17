@@ -91,7 +91,6 @@ class GetUserView(generics.GenericAPIView):
     # queryset = User.objects.none()
     serializer_class = GetUserSerializer
     def get(self, request, format=None):
-        print("okay")
         user_serializer = GetUserSerializer(request.user)
         return Response({'user': user_serializer.data}, status=status.HTTP_200_OK)
 

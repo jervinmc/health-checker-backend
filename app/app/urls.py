@@ -14,11 +14,12 @@ from rest_framework_simplejwt.views import (
 
 urlpatterns = [
 path('api/v1/admin/', admin.site.urls),
-    path('api/v1/signup/', Signup.as_view(), name='Sign up'),
     path('api/v1/auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/auth/user/', GetUserView.as_view(), name='auth_data'),
     path('api/v1/login/', Login.as_view(), name='token_refresh'),
     path('api/v1/users/', include('users.urls')),
+    path('api/v1/endpoint/', include('endpoint.urls')),
+    path('api/v1/project/', include('project.urls')),
     # path('api/v1/users/details/', GetUserView.as_view(), name='get_user'),
 ]
